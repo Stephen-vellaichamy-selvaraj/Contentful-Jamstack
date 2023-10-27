@@ -1,0 +1,81 @@
+.content {
+	--bs-border-radius: 16px;
+	// Local Variables
+	$this: &;
+
+	// Styles
+	@extend %component;
+	font-family: $roboto;
+	margin-bottom: 40px;
+	margin-top: 40px;
+
+	a {
+		font-weight: 700;
+		transition: $transition-time color ease;
+
+		&:link,
+		&:visited {
+			color: $cornflower;
+			text-decoration: none;
+		}
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: $cornflower;
+			text-decoration: underline;
+		}
+	}
+
+	&__main {
+		color: $reece-blue;
+
+		h2.fs-4 {
+			font-weight: 400;
+		}
+
+		p.fs-5 {
+			color: $scorpion;
+			font-weight: 700;
+		}
+	}
+
+	&__sidebar {
+		color: $scorpion;
+
+		img.img-fluid {
+			width: 100%;
+		}
+	}
+
+	&--dark {
+		background-color: $concrete;
+		margin-bottom: 0;
+		margin-top: 0;
+		padding-bottom: 40px;
+		padding-top: 40px;
+	}
+
+	@media screen and (min-width: $medium) {
+		margin-bottom: 60px;
+		margin-top: 60px;
+
+		&:last-child {
+			margin-bottom: 90px;
+			margin-top: 90px;
+		}
+
+		&--dark {
+			background-color: $concrete;
+			margin-bottom: 0;
+			margin-top: 0;
+			padding-bottom: 60px;
+			padding-top: 60px;
+
+			&:last-child {
+				padding-bottom: 90px;
+				padding-top: 90px;
+			}
+		}
+	}
+}

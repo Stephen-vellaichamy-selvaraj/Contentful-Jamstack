@@ -1,0 +1,10 @@
+[
+    {
+      "fromPath": "/login/",
+      "toPath": "/brands/"
+    },
+    {
+      "fromPath": "/blog/recipes/*",
+      "toPath": "/recipes/"
+    }
+]

@@ -1,0 +1,129 @@
+.news-nav {
+
+	// Local Variables
+	$this: &;
+
+	// Styles
+
+	.dropdown {
+		background-color: $tundora;
+		font-family: $roboto;
+		padding-bottom: 12px;
+		padding-top: 12px;
+
+		&-toggle {
+			align-items: center;
+			background: transparent;
+			border: 0;
+			color: $white;
+			display: flex;
+			flex-flow: row nowrap;
+			font-size: 22px;
+			justify-content: space-between;
+			line-height: 1.1;
+			padding: 0 8px;
+			width: 100%;
+
+			svg {
+				fill: currentcolor;
+				height: 16px;
+				margin-left: 24px;
+				width: 18px;
+			}
+
+			&:after {
+				display: none;
+			}
+
+			&[aria-expanded='true'] {
+				svg {
+					transform: rotate(180deg);
+				}
+			}
+		}
+
+		&-menu {
+			border-radius: 0;
+			padding: 0;
+		}
+
+		&-item {
+			color: $reece-blue;
+			font-size: 20px;
+			font-weight: 700;
+			line-height: 2;
+			transition: $transition-time background-color ease;
+
+			&:hover,
+			&:focus,
+			&:active {
+				background-color: rgba($cornflower, 0.1);
+			}
+		}
+	}
+
+	&__social {
+		list-style-type: none;
+		margin-bottom: 0;
+		margin-left: 0;
+		padding-bottom: 12px;
+		padding-left: 0;
+		padding-top: 12px;
+		text-align: right;
+
+		li {
+			margin-left: 12px;
+		}
+
+		a {
+			transition: $transition-time color ease;
+
+			&:link,
+			&:visited {
+				color: $reece-blue;
+				text-decoration: none;
+			}
+
+			&:hover,
+			&:focus,
+			&:active {
+				color: $cornflower;
+				text-decoration: none;
+			}
+		}
+
+		svg {
+			fill: currentcolor;
+			height: 24px;
+			width: 24px;
+		}
+	}
+
+	@media screen and (min-width: $small) {
+		background: $tundora;
+
+		.row {
+			margin-left: 0;
+			margin-right: 0;
+		}
+
+		.dropdown-toggle {
+			width: auto;
+		}
+
+		&__social {
+			a {
+				&:link,
+				&:visited {
+					color: $white;
+				}
+
+				&:hover,
+				&:focus,
+				&:active {
+					color: $hawkes;
+				}
+			}
+		}
+	}
+}

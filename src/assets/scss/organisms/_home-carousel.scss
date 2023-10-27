@@ -1,0 +1,87 @@
+.home-carousel {
+
+	// Local Variables
+	$this: &;
+
+	// Styles
+	position: relative;
+
+	.carousel {
+		position: relative;
+	}
+
+	.masthead {
+		.container {
+			--bs-gutter-x: 4.5rem;
+		}
+	}
+
+	&__controls {
+		align-items: center;
+		background: $black;
+		bottom: 40px;
+		color: $white;
+		display: flex;
+		flex-flow: row nowrap;
+		font-family: $roboto;
+		justify-content: center;
+		line-height: 1;
+		padding: 8px;
+		position: absolute;
+		right: 28px;
+		z-index: 10;
+
+		span {
+			padding: 0 8px;
+			position: relative;
+			top: 1px;
+		}
+
+		svg {
+			fill: currentcolor;
+			height: 16px;
+			width: 18px;
+		}
+
+		.carousel-control-prev,
+		.carousel-control-next {
+			opacity: 1;
+			position: static;
+		}
+	}
+
+	@media screen and (min-width: $small) {
+		&__controls {
+			right: 11.5%;
+		}
+	}
+
+	@media screen and (min-width: $medium) {
+		.masthead__content {
+			transform: translateX(300px);
+		}
+
+		&__controls {
+			bottom: 60px;
+		}
+	}
+
+	@media screen and (min-width: $large) {
+		.masthead {
+			.container {
+				--bs-gutter-x: 7rem;
+			}
+		}
+
+		.masthead__content {
+			transform: translateX(66.6666%);
+		}
+	}
+
+	@media screen and (min-width: $xxlarge) {
+		&__controls {
+			right: 50%;
+			transform: translateX(610px);
+		}
+	}
+}

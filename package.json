@@ -1,0 +1,46 @@
+{
+  "name": "reece-gatsby-portal",
+  "private": true,
+  "description": "JAMSTACK",
+  "version": "0.1.0",
+  "license": "0BSD",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "contentful-cli": "^3.0.5",
+    "contentful-migration": "^4.14.1",
+    "gatsby": "^5.11.0",
+    "gatsby-plugin-image": "^3.12.1",
+    "gatsby-plugin-manifest": "^5.12.1",
+    "gatsby-plugin-netlify": "^5.1.0",
+    "gatsby-plugin-react-helmet": "^6.11.0",
+    "gatsby-plugin-redirect-to": "^1.0.2",
+    "gatsby-plugin-sharp": "^5.12.1",
+    "gatsby-plugin-sitemap": "^6.11.0",
+    "gatsby-remark-images-contentful": "^6.12.1",
+    "gatsby-source-contentful": "^8.11.0",
+    "gatsby-source-graphql": "^5.11.0",
+    "gatsby-transformer-sharp": "^5.12.1",
+    "gatsby-transformer-sqip": "^5.12.1",
+    "moment": "^2.29.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
+    "react-scripts": "^3.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  }
+}

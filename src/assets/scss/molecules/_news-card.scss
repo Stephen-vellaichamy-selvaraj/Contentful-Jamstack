@@ -1,0 +1,72 @@
+.news-card {
+
+	// Local Variables
+	$this: &;
+	color: $reece-blue;
+
+	// Styles
+	font-family: $roboto;
+	margin-top: var(--bs-gutter-x);
+
+	a {
+		transition: $transition-time color ease;
+
+		&:link,
+		&:visited {
+			color: $cornflower;
+			text-decoration: underline;
+		}
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: $reece-blue;
+			text-decoration: underline;
+		}
+	}
+
+	p.fs-5 {
+		color: $scorpion;
+		font-weight: 700;
+	}
+
+	&__content {
+		background-color: $concrete;
+		height: 100%;
+		padding: 24px 32px;
+		position: relative;
+	}
+
+	&__tag {
+		bottom: 0;
+		color: $white;
+		display: block;
+		font-size: 18px;
+		font-weight: bold;
+		line-height: 1.3333;
+		min-width: 128px;
+		position: absolute;
+		right: 0;
+		text-align: center;
+
+		&--bath {
+			background-color: $bath;
+		}
+
+		&--hvac {
+			background-color: $hvac;
+		}
+
+		&--plumbing {
+			background-color: $plumbing;
+		}
+
+		&--reece {
+			background-color: $reece-blue;
+		}
+
+		&--waterworks {
+			background-color: $waterworks;
+		}
+	}
+}

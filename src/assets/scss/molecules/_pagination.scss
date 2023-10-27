@@ -1,0 +1,73 @@
+.pagination {
+
+	// Local Variables
+	$this: &;
+	color: $reece-blue;
+
+	// Styles
+	font-family: $roboto;
+	font-size: 20px;
+	line-height: 1.2;
+	margin-top: 40px;
+
+	.row {
+		margin: 0;
+		position: relative;
+		width: 100%;
+	}
+
+	a {
+		transition: $transition-time color ease;
+
+		&:link,
+		&:visited {
+			color: $reece-blue;
+			text-decoration: none;
+		}
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: $cornflower;
+			text-decoration: underline;
+
+			&[rel] {
+				text-decoration: none;
+			}
+		}
+	}
+
+	svg {
+		fill: currentcolor;
+		height: 16px;
+		position: relative;
+		top: -2px;
+		width: 16px;
+	}
+
+	&__links {
+		align-items: center;
+		display: flex;
+		flex-flow: row nowrap;
+		font-weight: 700;
+		gap: 24px;
+		justify-content: center;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	&__count {
+		display: none;
+	}
+
+	@media screen and (min-width: $medium) {
+		&__count {
+			display: block;
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: auto;
+		}
+	}
+}

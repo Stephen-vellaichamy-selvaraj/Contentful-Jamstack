@@ -1,0 +1,99 @@
+.sign-in {
+
+	// Styles
+	--bs-border-radius: 16px;
+
+	// Local Variables
+	$this: &;
+	background-color: $white;
+	color: $reece-blue;
+	font-family: $roboto;
+	margin: 0 auto;
+	max-width: 540px;
+	padding: 40px 36px;
+
+	a {
+		transition: $transition-time color ease;
+
+		&:link,
+		&:visited {
+			color: $cornflower;
+			text-decoration: none;
+		}
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: $reece-blue;
+			text-decoration: none;
+		}
+	}
+
+	&__form {
+		a {
+			font-size: 12px;
+		}
+
+		label {
+			display: block;
+			line-height: 1.4;
+			margin-top: 16px;
+		}
+
+		input[type='email'],
+		input[type='password'],
+		input[type='text'] {
+			border: 1px solid $reece-blue;
+			border-radius: 4px;
+			display: block;
+			padding: 8px 10px;
+			width: 100%;
+
+			&:focus {
+				background-color: $hawkes;
+			}
+
+			&:placeholder {
+				color: $scorpion;
+			}
+		}
+	}
+
+	&__controls {
+		margin-top: 1rem;
+		text-align: right;
+
+		a,
+		button {
+			margin-left: 1rem;
+		}
+	}
+
+	&__register {
+		border-top: 1px solid $scorpion;
+		margin-top: 1.5rem;
+		padding-top: 1.5rem;
+	}
+
+	@media screen and (min-width: $medium) {
+		bottom: 45px;
+		left: 50%;
+		padding: 16px 16px 0;
+		position: absolute;
+		transform: translateX(-345px);
+		width: 300px;
+		z-index: 20;
+	}
+
+	@media screen and (min-width: 992px) {
+		transform: translateX(-465px);
+	}
+
+	@media screen and (min-width: $large) {
+		transform: translateX(-515px);
+	}
+
+	@media screen and (min-width: $xlarge) {
+		transform: translateX(-600px);
+	}
+}

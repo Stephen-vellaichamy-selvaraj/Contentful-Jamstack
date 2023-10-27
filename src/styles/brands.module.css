@@ -1,0 +1,27 @@
+.brands {
+    text-align: center;
+  }
+  .brands > h2 {
+    font-size: 2em;
+    margin-top: 80px;
+  }
+  .brands > h3 {
+    font-size: 1.8em;
+    font-weight: 400;
+  }
+  .brand {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 70px;
+    margin: 70px 10px;
+  }
+  .brand h3 {
+    text-align: center;
+    margin: 20px auto 0px;
+    font-weight: 500;
+  }
+  .brand p {
+    color: black;
+    margin-top: 4px;
+    font-size: .8em;
+  }

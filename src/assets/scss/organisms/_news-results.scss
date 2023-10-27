@@ -1,0 +1,24 @@
+.news-results {
+
+	// Local Variables
+	$this: &;
+
+	// Styles
+	margin-bottom: 40px;
+	margin-top: 40px;
+
+	&__items {
+		--bs-gutter-x: 15px;
+	}
+
+	@media screen and (min-width: $medium) {
+		margin-bottom: 60px;
+		margin-top: 60px;
+	}
+
+	@media screen and (min-width: $large) {
+		.container {
+			--bs-gutter-x: 13.5rem;
+		}
+	}
+}

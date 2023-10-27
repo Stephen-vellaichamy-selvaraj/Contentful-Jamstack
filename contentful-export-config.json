@@ -1,0 +1,12 @@
+{
+    "spaceId": "32w9pi4zc4mq",
+    "environmentId": "release-2",
+    "managementToken": "2bNYMHNMOsd6G7UIy9Hwqb7PuwxMBbzUpCFTjZDQvEs",
+    "exportDir": "/Development/Morsco/REECE-GATSBY-PORTAL/Contentful-CLI-Scripts/export",
+    "saveFile": true,
+    "contentFile": "export.json",
+    "host": "api.contentful.com",
+    "maxAllowedLimit": 1000,
+    "errorLogFile": "/Development/Morsco/REECE-GATSBY-PORTAL/Contentful-CLI-Scripts/export/error.log",
+    "useVerboseRenderer": false
+  }

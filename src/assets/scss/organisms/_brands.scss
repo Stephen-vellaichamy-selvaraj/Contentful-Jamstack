@@ -1,0 +1,146 @@
+.brands {
+
+	// Local Variables
+	$this: &;
+
+	// Styles
+	@extend %component;
+	color: $reece-blue;
+	font-family: $roboto;
+	margin-bottom: 40px;
+	margin-top: 40px;
+
+	&__tabs {
+		overflow-x: auto;
+		position: relative;
+		width: 100%;
+	}
+
+	.nav-tabs {
+		border-bottom: 5px solid $alto;
+		flex-wrap: nowrap;
+	}
+
+	.nav-item {
+		flex-grow: 1;
+		text-align: center;
+	}
+
+	.nav-link {
+		border-width: 1px 0 5px;
+		color: $reece-blue;
+		margin-bottom: -5px;
+		padding: 8px 16px 16px;
+		width: 100%;
+
+		&:hover {
+			border-color: transparent;
+			border-bottom-color: $scorpion;
+		}
+
+		&.active {
+			border-color: transparent;
+			color: $reece-blue;
+			font-weight: 700;
+			padding: 0 16px 24px;
+
+			&[id*='plumbing'] {
+				border-bottom-color: $plumbing;
+			}
+
+			&[id*='hvac'] {
+				border-bottom-color: $hvac;
+			}
+
+			&[id*='waterworks'] {
+				border-bottom-color: $waterworks;
+			}
+
+			&[id*='bath'] {
+				border-bottom-color: $bath;
+			}
+		}
+	}
+
+	.tab-pane {
+		a {
+			align-items: center;
+			display: flex;
+			flex-flow: column;
+			font-weight: 700;
+			justify-content: flex-start;
+			margin-top: 24px;
+			transition: $transition-time color ease;
+
+			&:link,
+			&:visited {
+				color: $cornflower;
+				text-decoration: underline;
+			}
+
+			&:hover,
+			&:focus,
+			&:active {
+				color: $reece-blue;
+				text-decoration: underline;
+			}
+		}
+
+		img {
+			margin-bottom: auto;
+			margin-top: auto;
+		}
+
+		.row {
+			margin-left: 0;
+			margin-right: 0;
+		}
+
+		span {
+			margin-top: 16px;
+		}
+	}
+
+	.carousel-inner {
+		z-index: 10;
+	}
+
+	.carousel-control-prev,
+	.carousel-control-next {
+		color: $reece-blue;
+		opacity: 1;
+		width: 24px;
+		z-index: 20;
+
+		svg {
+			fill: currentcolor;
+			height: 24px;
+			width: 24px;
+		}
+	}
+
+	.carousel-control-prev {
+		left: auto;
+		right: calc(100% + 8px);
+	}
+
+	.carousel-control-next {
+		left: calc(100% + 8px);
+		right: auto;
+	}
+
+	@media screen and (min-width: $small) {
+		.carousel-control-prev {
+			right: calc(100% + 16px);
+		}
+
+		.carousel-control-next {
+			left: calc(100% + 16px);
+		}
+	}
+
+	@media screen and (min-width: $medium) {
+		margin-bottom: 60px;
+		margin-top: 60px;
+	}
+}

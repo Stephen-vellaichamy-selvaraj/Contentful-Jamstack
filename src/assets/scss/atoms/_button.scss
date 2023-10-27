@@ -1,0 +1,46 @@
+.btn {
+	--bs-border-radius: 0.5rem;
+	--bs-btn-padding-x: 2rem;
+
+	// Local Variables
+	$this: &;
+
+	// Styles
+	border: 2px solid transparent;
+
+	&--dark {
+		background: $reece-blue;
+		color: $white;
+
+		&:link,
+		&:visited {
+			background: $reece-blue;
+			color: $white;
+		}
+
+		&:hover,
+		&:focus,
+		&:active {
+			background: $cornflower;
+			color: $white;
+		}
+	}
+
+	&--light {
+		background: $white;
+		color: $reece-blue;
+
+		&:link,
+		&:visited {
+			background: $white;
+			color: $reece-blue;
+		}
+
+		&:hover,
+		&:focus,
+		&:active {
+			background: $hawkes;
+			color: $reece-blue;
+		}
+	}
+}

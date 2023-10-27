@@ -1,0 +1,9 @@
+node_modules
+.cache/
+public/
+launch.json
+.env.development
+.env.production
+Contentful-CLI-Scripts/export
+Contentful-CLI-Scripts/contentful-cli-win-3.0.5
+src/HouseKeeping

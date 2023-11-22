@@ -15,7 +15,6 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
-    "contentful-cli": "^3.0.5",
     "contentful-migration": "^4.14.1",
     "gatsby": "^5.11.0",
     "gatsby-plugin-image": "^3.12.1",

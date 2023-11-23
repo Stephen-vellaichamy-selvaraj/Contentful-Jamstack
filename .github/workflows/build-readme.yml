@@ -1,13 +1,19 @@
-name: Latest blog post workflow
+name: Update GitHub Profile README
 on:
   repository_dispatch:
     types: [publish-event]
 jobs:
-  update-readme-with-blog:
-    name: Update this repo's README with latest blog posts
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: Stephen-vellaichamy-selvaraj/Contentful-Jamstack@main
+    - name: Update GitHub Profile README
+      uses: Stephen-vellaichamy-selvaraj/Contentful-Jamstack@main
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        feed_list: "https://whitep4nth3r.com/feed.xml"
-        commit_message: "Updated README with latest blog posts"
+        header: "Hey, I'm Ryan! 👋"
+        subhead: "Currently a student in Singapore, passionate about creating all-things-tech to improve society."
+        footer: "**Learn more about me at [ryanthe.com](https://www.ryanthe.com)!**"
+        ref: "main"
+        excludeActivity: '["WatchEvent"]'
+        excludeRepo: '["theboi/theboi"]'

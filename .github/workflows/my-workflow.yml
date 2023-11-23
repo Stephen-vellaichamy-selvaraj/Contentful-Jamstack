@@ -1,7 +1,7 @@
 name: Build Gatsby from contentful
 on:
   repository_dispatch:
-    types: [publish-event]
+    types: [publish-event-test]
 jobs:
     my_first_job:
         runs-on: ubuntu-latest

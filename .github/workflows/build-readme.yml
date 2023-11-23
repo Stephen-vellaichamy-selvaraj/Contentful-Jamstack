@@ -1,0 +1,9 @@
+name: Update GitHub Profile README
+on:
+  repository_dispatch:
+    types: [contentful.deploy]
+uses: Stephen-vellaichamy-selvaraj/Contentful-Jamstack
+with:
+    header: "Hey, I'm Ryan! 👋"
+    subhead: "Currently a student in Singapore, passionate about creating all-things-tech to improve society."
+    footer: "**Learn more about me at [ryanthe.com](https://www.ryanthe.com)!**"

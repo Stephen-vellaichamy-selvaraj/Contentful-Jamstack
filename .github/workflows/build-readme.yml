@@ -5,10 +5,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:
+    steps:    
     - name: Update GitHub Profile README
-    - uses: actions/checkout@v2    
-    - uses: Stephen-vellaichamy-selvaraj/Contentful-Jamstack@main
+      uses: Stephen-vellaichamy-selvaraj/Contentful-Jamstack@main
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:

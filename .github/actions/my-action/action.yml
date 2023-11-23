@@ -8,16 +8,9 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '${{ inputs.node-version }}'
-    
-  	- run: npm ci
-  	- run: npm run build
-
-  	- name: Deploy
-    	uses: Stephen-vellaichamy-selvaraj/Contentful-Jamstack@main
-    	with:
-      	publish_dir: _site
+      - uses: actions/checkout@v2
+      - uses: Stephen-vellaichamy-selvaraj/Contentful-Jamstack@main
+        with:
+          feed_list: "https://whitep4nth3r.com/feed.xml"
+          commit_message: "Updated README with latest blog posts"
       

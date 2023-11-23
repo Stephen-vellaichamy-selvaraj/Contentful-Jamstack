@@ -10,13 +10,15 @@ function useContentful(query, isCategory, isPageNumber){
       console.log("isCategory: " + isCategory)
       console.log("isPageNumber: " + isPageNumber)
       console.log(query)
+      console.log("CONTENTFUL_SPACE_ID: " + process.env.CONTENTFUL_SPACE_ID)
+
       window.fetch(
-        `https://graphql.contentful.com/content/v1/spaces/${CONTENTFUL_SPACE_ID}/environments/${CONTENTFUL_ENVIRONMENT}`, 
+        `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/${process.env.CONTENTFUL_ENVIRONMENT}`, 
         {
           method: "POST",
           headers:{
             'Content-Type':"application/json",
-            Authorization: `Bearer ${CONTENTFUL_ACCESS_TOKEN}`
+            Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`
           },
           body: JSON.stringify({ query, variables:{"category": isCategory, "pageskip": isPageNumber}}),
         }

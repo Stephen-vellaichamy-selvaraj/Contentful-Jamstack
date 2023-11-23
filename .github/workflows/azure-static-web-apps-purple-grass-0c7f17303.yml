@@ -1,5 +1,11 @@
 name: Azure Static Web Apps CI/CD
 
+env: # Add environment variables here
+  CONTENTFUL_SPACE_ID: '007inbhlnus1'
+  CONTENTFUL_ACCESS_TOKEN:  '7wMQgKx3LGaqtmfhZei2xRPACLr2iQHpNs4dNkv_9B4'
+  CONTENTFUL_ENVIRONMENT: 'master'
+  CONTENTFUL_HOST:  'preview.contentful.com'
+
 on:
   push:
     branches:

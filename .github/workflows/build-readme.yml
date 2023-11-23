@@ -1,32 +1,20 @@
-name: Eleventy Build on Contentful Publish Event
+name: Latest blog post workflow
 on:
-	repository_dispatch:
-    	types: [publish-event]
-
+  repository_dispatch:
+    types: [publish-event]
+     
 jobs:
-  deploy:
-	runs-on: ubuntu-18.04
-	steps:
-  	- uses: actions/checkout@v2
-
-  	- name: Setup Node
-    	uses: actions/setup-node@v1
-    	with:
-      	node-version: '18.x'
-
-  	- name: Cache dependencies
-    	uses: actions/cache@v1
-    	with:
-      	path: ~/.npm
-      	key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-      	restore-keys: |
-        	${{ runner.os }}-node-
-
-  	- run: npm ci
-  	- run: npm run build
-
-  	- name: Deploy
-    	uses: peaceiris/actions-gh-pages@v3
-    	with:
-      	deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-      	publish_dir: _site
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Update GitHub Profile README
+      uses: theboi/github-update-readme@main
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        header: "Hey, I'm Ryan! 👋"
+        subhead: "Currently a student in Singapore, passionate about creating all-things-tech to improve society."
+        footer: "**Learn more about me at [ryanthe.com](https://www.ryanthe.com)!**"
+        ref: "main"
+        excludeActivity: '["WatchEvent"]'
+        excludeRepo: '["theboi/theboi"]'

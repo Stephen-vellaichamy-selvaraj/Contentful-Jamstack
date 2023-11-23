@@ -1,12 +1,10 @@
 name: Test
 description: 'composite run action'
+
 runs:
-  update-readme-with-blog:
-    name: Update this repo's README with latest blog posts
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: Stephen-vellaichamy-selvaraj/Contentful-Jamstack@main
-        with:
-          feed_list: "https://whitep4nth3r.com/feed.xml"
-          commit_message: "Updated README with latest blog posts"
+  using: "composite"
+  steps: 
+    - name: Echo
+      shell: bash
+      run: |
+        echo Heyyyyy

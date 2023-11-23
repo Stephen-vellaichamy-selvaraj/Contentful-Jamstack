@@ -4,6 +4,9 @@
   "description": "JAMSTACK",
   "version": "0.1.0",
   "license": "0BSD",
+  "engines": {
+    "node": ">=18.18.0"
+  },
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -15,8 +18,6 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
-    "contentful-cli": "^3.0.5",
-    "contentful-migration": "^4.14.1",
     "gatsby": "^5.11.0",
     "gatsby-plugin-image": "^3.12.1",
     "gatsby-plugin-manifest": "^5.12.1",

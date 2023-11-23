@@ -1,0 +1,13 @@
+name: Latest blog post workflow
+on:
+  repository_dispatch:
+    types: [publish-event]
+jobs:
+  update-readme-with-blog:
+    name: Update this repo's README with latest blog posts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Stephen-vellaichamy-selvaraj/Contentful-Jamstack
+      with:
+        feed_list: "https://whitep4nth3r.com/feed.xml"
+        commit_message: "Updated README with latest blog posts"

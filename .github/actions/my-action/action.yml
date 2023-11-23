@@ -13,19 +13,8 @@ runs:
       with:
         node-version: '${{ inputs.node-version }}'
 
-  	- name: Cache dependencies
-    	uses: actions/cache@v1
-    	with:
-      	path: ~/.npm
-      	key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-      	restore-keys: |
-        	${{ runner.os }}-node-
-
-  	- run: npm ci
-  	- run: npm run build
-
-  	- name: Deploy
-    	uses: Stephen-vellaichamy-selvaraj/Contentful-Jamstack@main
-    	with:
-      	deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-      	publish_dir: _site   
+    - name: Install dependencies
+      shell: bash # ! the dev has to specify this line at every `run` step in a composite action
+      run: npm ci
+      run: npm run build
+      

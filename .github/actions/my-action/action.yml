@@ -1,7 +1,3 @@
-name: Build Gatsby from contentful
-on:
-  repository_dispatch:
-    types: [publish-event]
 jobs:
   update-readme-with-blog:
     name: Update this repo's README with latest blog posts
@@ -12,4 +8,3 @@ jobs:
         with:
           feed_list: "https://whitep4nth3r.com/feed.xml"
           commit_message: "Updated README with latest blog posts"
-

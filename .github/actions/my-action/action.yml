@@ -1,8 +1,6 @@
-name: Action Gatsby from contentful
-on:
-  repository_dispatch:
-    types: [publish-event]
-jobs:
+name: Test
+description: 'composite run action'
+runs:
   update-readme-with-blog:
     name: Update this repo's README with latest blog posts
     runs-on: ubuntu-latest

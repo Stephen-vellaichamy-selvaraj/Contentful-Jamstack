@@ -1,3 +1,7 @@
+name: Action Gatsby from contentful
+on:
+  repository_dispatch:
+    types: [publish-event]
 jobs:
   update-readme-with-blog:
     name: Update this repo's README with latest blog posts

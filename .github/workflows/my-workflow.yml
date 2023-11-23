@@ -1,4 +1,4 @@
-name: Build Gatsby from contentful
+name: Workflow Gatsby from contentful
 on:
   repository_dispatch:
     types: [publish-event]

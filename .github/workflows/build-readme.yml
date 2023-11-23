@@ -7,7 +7,7 @@ jobs:
     name: Update this repo's README with latest blog posts
     runs-on: ubuntu-latest
     steps:
-      - uses: Stephen-vellaichamy-selvaraj/Contentful-Jamstack
+      - uses: Stephen-vellaichamy-selvaraj/Contentful-Jamstack@main
       with:
         feed_list: "https://whitep4nth3r.com/feed.xml"
         commit_message: "Updated README with latest blog posts"

@@ -5,7 +5,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:    
+    steps:
+    - uses: actions/checkout@v2
     - name: Update GitHub Profile README
       uses: Stephen-vellaichamy-selvaraj/Contentful-Jamstack@main
       env:

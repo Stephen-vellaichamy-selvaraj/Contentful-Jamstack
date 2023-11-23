@@ -54,6 +54,4 @@ npm install --unsafe-perm
 
 MEHTOD 2# : install node version 14
 
-
-
 <!-- AUTO-GENERATED-CONTENT:END -->

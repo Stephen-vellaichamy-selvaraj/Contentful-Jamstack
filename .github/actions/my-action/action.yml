@@ -12,8 +12,13 @@ runs:
       uses: actions/setup-node@v3
       with:
         node-version: '${{ inputs.node-version }}'
+    
+  	- run: npm ci
+  	- run: npm run build
 
-    - name: Install dependencies
-      shell: bash # ! the dev has to specify this line at every `run` step in a composite action
-      run: npm run build
+  	- name: Deploy
+    	uses: Stephen-vellaichamy-selvaraj/Contentful-Jamstack@main
+    	with:
+      	deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+      	publish_dir: _site
       

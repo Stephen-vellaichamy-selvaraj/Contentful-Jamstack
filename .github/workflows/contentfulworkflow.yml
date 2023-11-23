@@ -1,0 +1,4 @@
+name: Contentful workflow
+on:
+  repository_dispatch:
+    types: [contentful.deploy]

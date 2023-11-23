@@ -2,18 +2,13 @@ name: Latest blog post workflow
 on:
   repository_dispatch:
     types: [publish-event]
-     
 jobs:
-  build:
+  update-readme-with-blog:
+    name: Update this repo's README with latest blog posts
     runs-on: ubuntu-latest
     steps:
-    - name: Update GitHub Profile README
-      uses: Stephen-vellaichamy-selvaraj/Contentful-Jamstack@main
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        header: "Test Header! 👋"
-        subhead: "Test SubHead"
-        footer: "**Test Footer!**"
-        ref: "main"
-        excludeActivity: '["WatchEvent"]'
+      - uses: actions/checkout@v2
+      - uses: Stephen-vellaichamy-selvaraj/Contentful-Jamstack@master
+        with:
+          feed_list: "https://whitep4nth3r.com/feed.xml"
+          commit_message: "Updated README with latest blog posts"

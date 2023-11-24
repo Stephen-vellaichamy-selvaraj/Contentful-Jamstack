@@ -7,11 +7,17 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      MY_APP_ID: ${{ vars.GIT_APP_ID }}
-      
+
+    strategy:
+      matrix:
+        node-version: [16.x, 18.x]
+
     steps:
-      - uses: actions/checkout@v3
-      - uses: Stephen-vellaichamy-selvaraj/Contentful-Jamstack@main
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
         with:
-          access-token: ${{ secrets.GIT_API_KEY }}
+          node-version: ${{ matrix.node-version }}
+      - name: Build
+        run: npm run build

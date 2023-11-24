@@ -14,12 +14,14 @@ jobs:
             node-version: '18.x'
 
         - name: Cache dependencies
-          uses: actions/cache@v1
+        - uses: actions/checkout@v2
+        - uses: kenchan0130/actions-system-info@master
+          id: system-info
+        - uses: actions/cache@v2
           with:
             path: ~/.npm
-            key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-            restore-keys: |
-                ${{ runner.os }}-node-
+            key: ${{ runner.os }}-${{ steps.system-info.outputs.release }}-node-${{ hashFiles('**/package-lock.json') }}
+            restore-keys: ${{ runner.os }}-${{ steps.system-info.outputs.release }}-node-
                     
         - run: npm ci
         - run: npm run build

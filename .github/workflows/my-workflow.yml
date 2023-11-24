@@ -5,7 +5,10 @@ on:
 jobs:
     my_first_job:
         runs-on: ubuntu-latest
-        steps:
+        env:
+         MY_APP_ID: ${{ vars.GIT_APP_ID }}
+         
+        steps:          
           # This step checks out a copy of your repository.
           - name: My first step - check out repository
             uses: actions/checkout@v4

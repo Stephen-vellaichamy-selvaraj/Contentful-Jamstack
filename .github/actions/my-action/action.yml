@@ -1,13 +1,35 @@
 name: Eleventy Build on Contentful Publish Event
 on:
-	workflow_dispatch
-jobs:
-  top-secret:
-	runs-on: ubuntu-latest
- 	env:
-  	 MY_GIT_APP_ID: ${{ vars.GIT_APP_ID}}
+    repository_dispatch:
+        types: [publish-event-test]
 
-    	steps:
-     		- name: Read a variable
-       		run echo "GIT_APP_ID value is " ${{ vars.GIT_APP_ID}}
-    	
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+        MY_APP_ID: ${{ vars.GIT_APP_ID }}
+
+    steps:
+        - uses: actions/checkout@v2
+        
+        - name: Setup Node
+          uses: actions/setup-node@v1
+          with:
+            node-version: '18.x'
+
+        - name: Cache dependencies
+          uses: actions/cache@v1
+          with:
+            path: ~/.npm
+            key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+            restore-keys: |
+                ${{ runner.os }}-node-
+                    
+        - run: npm ci
+        - run: npm run build
+
+        - name: Deploy
+          uses: Stephen-vellaichamy-selvaraj/Contentful-Jamstack@main
+          with:
+            deploy_key: ${{ secrets.GIT_API_KEY }}
+            publish_dir: _site

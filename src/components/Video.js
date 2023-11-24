@@ -1,5 +1,6 @@
 
 import React from "react";
+console.log("test")
 
 export default function Video(props)
 {

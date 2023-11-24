@@ -6,7 +6,7 @@ export default function Homecarousel(props)
 {
   const Carousels = props?.imageSelection
   let [PageNumber, setisPageNumber] = useState(1)
-  console.log("CarouselsLengh: " + Carousels?.length)
+  console.log("CarouselsLenghs: " + Carousels?.length)
   
   let showButton = null;
   showButton = Carousels && Carousels.length === 1? null : 1

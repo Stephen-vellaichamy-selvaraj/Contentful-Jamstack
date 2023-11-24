@@ -1,9 +1,7 @@
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    env:
-        MY_APP_ID: ${{ vars.GIT_APP_ID }}
-
+    
     steps:
         - uses: actions/checkout@v2
         

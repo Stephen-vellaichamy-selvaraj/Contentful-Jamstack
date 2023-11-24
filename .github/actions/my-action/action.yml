@@ -28,5 +28,5 @@ jobs:
   	- name: Deploy
     	uses: Stephen-vellaichamy-selvaraj/Contentful-Jamstack@main
     	with:
-      	deploy_key: ${{ secrets.ACCESS_TOKEN }}
+      	deploy_key: ${{ secrets.GATSBY_BUILD }}
       	publish_dir: _site

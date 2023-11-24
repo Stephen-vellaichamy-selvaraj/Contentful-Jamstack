@@ -1,8 +1,6 @@
 name: Eleventy Build on Contentful Publish Event
 on:
-	repository_dispatch:
-    	types: [publish-event]
-
+	workflow_dispatch
 jobs:
   top-secret:
 	runs-on: ubuntu-latest

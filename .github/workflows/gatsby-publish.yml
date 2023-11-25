@@ -1,7 +1,7 @@
 name: Contentful Build on Push
 on:
     repository_dispatch:
-      types: [publish-event]
+      types: [publish-event-test]
 
       jobs:
         build:

@@ -3,32 +3,32 @@ on:
     repository_dispatch:
       types: [publish-event]
 
-      jobs:
-        build:
-          runs-on: ubuntu-latest
-          
-          steps:
-            - name: Checkout
-              uses: actions/checkout@v3
-            
-            - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v1
-              with:
-                node-version: ${{ matrix.node-version }}
-            
-            - name: Cache dependencies
-              uses: actions/cache@v2
-              with:
-                path: ~/.npm
-                key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-                restore-keys: |
-                  ${{ runner.os }}-node-
-            
-            - run: npm ci
-            - run: npm run build
-            
-            - name: Deploy
-              uses: peaceiris/actions-gh-pages@v3
-              With:
-                deploy_key: ${{ secrets.GIT_API_KEY }}            
-                publish_dir: _site
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+    
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+         node-version: ${{ matrix.node-version }}
+    
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+         path: ~/.npm
+         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+         restore-keys: |
+            ${{ runner.os }}-node-
+    
+      - run: npm ci
+      - run: npm run build
+    
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.GIT_API_KEY }}
+          publish_dir: _site

@@ -33,7 +33,7 @@ jobs:
       - run: npm run build
     
       - name: Deploy
-        uses: Stephen-vellaichamy-selvaraj/Contentful-Jamstack@main
+        uses: enriikke/gatsby-gh-pages-action@v2
         with:
           access-token: ${{ secrets.GIT_PER_TOKEN }}
           publish_dir: _site

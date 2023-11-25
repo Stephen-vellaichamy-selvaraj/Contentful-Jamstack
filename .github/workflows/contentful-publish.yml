@@ -2,7 +2,7 @@ name: Contentful Publish
 
 on:
   repository_dispatch:
-    types: [publish-event-test]
+    types: [publish-event]
 
 jobs:
   build:

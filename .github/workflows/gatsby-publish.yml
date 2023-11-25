@@ -35,5 +35,5 @@ jobs:
       - name: Deploy
         uses: enriikke/gatsby-gh-pages-action@v2
         with:
-          deploy_key: ${{ secrets.GIT_API_KEY }}
+          access-token: ${{ secrets.GIT_API_KEY }}
           publish_dir: _site

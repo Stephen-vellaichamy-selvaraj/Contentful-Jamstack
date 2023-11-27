@@ -30,7 +30,7 @@ jobs:
             ${{ runner.os }}-node-
     
       - run: yarn install --frozen-lockfile-update
-      #- run: yarn install --immutable --immutable-cache --check-cache
+      #- run: yarn install --immutable --immutable-cache --check-cache test
       - run: npm run build
     
       - name: Deploy

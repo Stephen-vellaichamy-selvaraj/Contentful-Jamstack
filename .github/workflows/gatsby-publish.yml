@@ -1,0 +1,39 @@
+name: Contentful Build on Push
+on:
+    repository_dispatch:
+      types: [publish-event]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env: # Add environment variables here
+      CONTENTFUL_SPACE_ID: '007inbhlnus1'
+      CONTENTFUL_ACCESS_TOKEN:  '7wMQgKx3LGaqtmfhZei2xRPACLr2iQHpNs4dNkv_9B4'
+      CONTENTFUL_ENVIRONMENT: 'master'
+      CONTENTFUL_HOST:  'preview.contentful.com' 
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+    
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+         node-version: '18.x'
+    
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+         path: ~/.npm
+         key: ${{ runner.os }}-node-${{ hashFiles('**/package.json') }}
+         restore-keys: |
+            ${{ runner.os }}-node-
+    
+      - run: yarn install --frozen-lockfile
+      - run: npm run build
+    
+      - name: Deploy
+        uses: enriikke/gatsby-gh-pages-action@v2
+        with:
+          access-token: ${{ secrets.GIT_PER_TOKEN }}
+          publish_dir: _site

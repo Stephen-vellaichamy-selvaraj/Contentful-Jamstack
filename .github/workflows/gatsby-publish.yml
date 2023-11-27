@@ -29,8 +29,8 @@ jobs:
          restore-keys: |
             ${{ runner.os }}-node-
     
-      #- run: yarn install --frozen-lockfile-update
-      - run: yarn install --immutable --immutable-cache --check-cache
+      - run: yarn install --frozen-lockfile-update
+      #- run: yarn install --immutable --immutable-cache --check-cache
       - run: npm run build
     
       - name: Deploy

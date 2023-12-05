@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreece_gatsby_portal=self.webpackChunkreece_gatsby_portal||[]).push([[883],{429:function(e,t,l){l.r(t);var a=l(7294),n=l(7045);t.default=()=>a.createElement(n.Z,null,a.createElement("div",null,a.createElement("h2",null,"404"),a.createElement("p",null,"Sorry, that page doesn't exist (yet)!")))}}]);
+//# sourceMappingURL=component---src-pages-404-js-6440eba6aa77df358882.js.map
